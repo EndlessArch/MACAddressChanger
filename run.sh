@@ -1,6 +1,14 @@
 #!/bin/bash
 
 echo "실행~"
+PROGRAM=MACChanger
+if [ ! -f "$PROGRAM" ]; then
+    # 4
+    echo "$PROGRAM 프로그램 못찾음."
+    cmake CMakeLists.txt -DCMAKE_BUILD_TYPE=Release
+    make
+fi
+
 FILE=TARGET_MAC_ADDR.txt
 if [ -f "$FILE" ]; then
     # 4
